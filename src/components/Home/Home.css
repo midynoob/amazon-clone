@@ -10,6 +10,12 @@
   );
 }
 
+@media (max-width: 900px) {
+  .home__image {
+    display: none;
+  }
+}
+
 .home {
   display: flex;
   justify-content: center;

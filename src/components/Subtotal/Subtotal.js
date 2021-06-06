@@ -1,12 +1,14 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
-import { getBasketToral } from '../../reducer/reducer';
+import { useHistory } from 'react-router';
+import { getBasketTotal } from '../../reducer/reducer';
 import { useStateValue } from '../../StateProvider';
 
 import './Subtotal.css';
 
 const Subtotal = () => {
 
+    const history = useHistory();
     const [{basket}, dispatch] = useStateValue();
 
     return (
@@ -23,12 +25,12 @@ const Subtotal = () => {
                     </>
                 )}
                 decimalScale={2}
-                value={getBasketToral(basket)}
+                value={getBasketTotal(basket)}
                 displayType={"text"}
                 thousandSeparator={true}
-                prefix={'$'}
+                prefix={'Rs'}
             />
-            <button>Procced to Checkout</button>
+            <button onClick={e => history.push('/payment')} >Procced to Checkout</button>
         </div>
     )
 }

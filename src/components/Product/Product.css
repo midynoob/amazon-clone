@@ -41,3 +41,12 @@
 .product__rating {
   display: flex;
 }
+
+@media (max-width: 500px) {
+  .product__title {
+    display: none;
+  }
+  .product {
+    justify-content: space-between;
+  }
+}

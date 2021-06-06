@@ -27,18 +27,22 @@ const Header = () => {
                 <Search className='header__searchIcon' />
             </div>
             <div className="header__nav">
-                    <Link to={!user && '/login'}>
-                        <div onClick={handleAuthentication} className="header__option">
-                            <span className="header__optionLineOne">Hello Guest</span>
-                            <span className="header__optionLineTwo">{user? 'Sign Out' : 'Sign In'}</span>
+                <Link to={!user && '/login'}>
+                    <div onClick={handleAuthentication} className="header__option">
+                        <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
+                        <span className="header__optionLineTwo">{user? 'Sign Out' : 'Sign In'}</span>
 
-                        </div>
-                    </Link>
+                    </div>
+                </Link>
                 
-                <div className="header__option">
-                    <span className="header__optionLineOne">Returns</span>
-                    <span className="header__optionLineTwo">& Orders</span>
-                </div>
+                <Link to='/orders' > 
+                    <div className="header__option">
+                        <span className="header__optionLineOne">Returns</span>
+                        <span className="header__optionLineTwo">& Orders</span>
+                    </div>
+                </Link>
+
+                
 
                 
                 <div className="header__option">
